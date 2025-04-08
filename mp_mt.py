@@ -31,28 +31,3 @@ def aplicar_modus_tollens(premisa1, premisa2):
     if consecuente and ("no " + consecuente) in premisa2_normalizada:
         return "No " + antecedente
     return None
-
-def main():
-    print("=== Inferencia con Modus Ponens o Tollens ===")
-    print("1. Modus Ponens")
-    print("2. Modus Tollens")
-    opcion = input("Selecciona una opción (1 o 2): ").strip()
-    
-    premisa1 = input("Ingresa la primera premisa (condicional): ")
-    premisa2 = input("Ingresa la segunda premisa: ")
-
-    if opcion == "1":
-        conclusion = aplicar_modus_ponens(premisa1, premisa2)
-    elif opcion == "2":
-        conclusion = aplicar_modus_tollens(premisa1, premisa2)
-    else:
-        print("Opción inválida.")
-        return
-
-    if conclusion:
-        print(f"\n>>> Conclusión inferida: {conclusion}")
-    else:
-        print("\n>>> No se pudo inferir una conclusión con las premisas dadas.")
-
-if __name__ == "__main__":
-    main()

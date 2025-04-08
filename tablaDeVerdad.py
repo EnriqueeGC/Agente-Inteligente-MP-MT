@@ -88,11 +88,11 @@ def eval_postfix_with_steps(postfix, values):
 # Verificar tipo de expresión (tautología, contradicción, etc.)
 def analizar_resultados(resultados):
     if all(resultados):
-        return "✅ Tautología (siempre verdadera)"
+        return "Tautología (siempre verdadera)"
     elif all(not r for r in resultados):
-        return "❌ Contradicción (siempre falsa)"
+        return "Contradicción (siempre falsa)"
     else:
-        return "⚖️ Contingencia (verdadera en algunos casos)"
+        return "️ Contingencia (verdadera en algunos casos)"
 
 # Tabla de verdad principal
 def truth_table(expression):
@@ -123,11 +123,11 @@ def truth_table(expression):
                 row.append('V' if step_dict[header] else 'F')
         table.append(row)
 
-    print("\n📋 Tabla de verdad:\n")
+    print("\nTabla de verdad:\n")
     print(tabulate(table, headers=headers, tablefmt="grid"))
 
     conclusion = analizar_resultados(resultados_finales)
-    print(f"\n🔍 Análisis lógico: {conclusion}\n")
+    print(f"\nAnálisis lógico: {conclusion}\n")
 
 # -----------------------------
 # Ejemplo de uso:
